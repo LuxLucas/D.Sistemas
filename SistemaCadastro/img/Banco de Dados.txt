@@ -1,0 +1,50 @@
+create DATABASE beleza_no_dia;
+USE beleza_no_dia;
+create TABLE funcionario(
+    id_func int AUTO_INCREMENT,
+    nome varchar(100),
+    fone varchar(15),
+    email varchar(26),
+    sexo ENUM("M","F"),
+    cpf varchar(14),
+    cep varchar(9),
+    PRIMARY KEY(id_func)
+    );
+create TABLE usuario(
+    id_usuario int AUTO_INCREMENT,
+    email varchar(26),
+    nome varchar(50),
+    sobrenome varchar(200),
+    nick varchar(25),
+    cep varchar(14),
+    data_nasc date,
+    data_cad date,
+    fone varchar(15),
+    sexo ENUM("M","F"),
+    Primary key(id_usuario)
+    );
+create TABLE produto(
+    id_prod int AUTO_INCREMENT,
+    nome varchar(70),
+    preco float,
+    descricao varchar(5000),
+    quant int,
+    imagem blob,
+   PRIMARY KEY(id_prod)
+        );
+create table categoria(
+    id_categ int AUTO_INCREMENT,
+    nome varchar(70),
+    descricao varchar(500),
+    Primary KEY(id_categ)
+    );
+create table fornecedor(
+    id_forn int AUTO_INCREMENT,
+    nome varchar(200),
+    nome_fant varchar(400),
+    cnpj varchar(18),
+    repre varchar(200),
+    fone varchar(15),
+    data_cad date,
+    PRIMARY KEY(id_forn)
+    );
