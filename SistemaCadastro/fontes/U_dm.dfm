@@ -1,4 +1,4 @@
-object DataModule1: TDataModule1
+object dm: Tdm
   OldCreateOrder = False
   OnCreate = DataModuleCreate
   Height = 314
@@ -114,6 +114,7 @@ object DataModule1: TDataModule1
     end
   end
   object DS_cliente: TDataSource
+    DataSet = tb_clientes
     Left = 56
     Top = 192
   end

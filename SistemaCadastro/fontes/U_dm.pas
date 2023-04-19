@@ -11,7 +11,7 @@ uses
   FireDAC.DApt, FireDAC.Comp.DataSet;
 
 type
-  TDataModule1 = class(TDataModule)
+  Tdm = class(TDataModule)
     conexao: TFDConnection;
     driver: TFDPhysMySQLDriverLink;
     WaitCursor: TFDGUIxWaitCursor;
@@ -38,7 +38,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  dm: Tdm;
 
 implementation
 
@@ -46,13 +46,13 @@ implementation
 
 {$R *.dfm}
 
-procedure TDataModule1.DataModuleCreate(Sender: TObject);
+procedure Tdm.DataModuleCreate(Sender: TObject);
 begin
   conexao.Params.Database:= 'cadastro_353';
   conexao.Params.UserName:= 'root';
   conexao.Params.Password:= '';
 
-  driver.VendorLib:= GetcurrentDir + '\lib\libmysql.dll(1)';
+  driver.VendorLib:= GetcurrentDir + '\lib\libmysql.dll';
   tb_clientes.TableName:='cliente';
   tb_clientes.Active:=true;
 

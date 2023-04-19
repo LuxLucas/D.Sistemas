@@ -35,6 +35,8 @@ implementation
 
 {$R *.dfm}
 
+uses U_dm;
+
 procedure Tfrm_principal.Clientes2Click(Sender: TObject);
 begin
      application.Createform(Tclientes,clientes);
