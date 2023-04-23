@@ -1,9 +1,10 @@
 ﻿object Clientes: TClientes
   Left = 0
   Top = 0
+  Width = 500
+  Height = 788
+  AutoScroll = True
   Caption = 'Cadastro de Clientes'
-  ClientHeight = 768
-  ClientWidth = 484
   Color = clWhite
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -12,6 +13,7 @@
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  ScreenSnap = True
   OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
@@ -19,12 +21,10 @@
     Left = 0
     Top = 0
     Width = 484
-    Height = 768
+    Height = 749
     ActivePage = tb_cadastro
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 485
-    ExplicitHeight = 621
     object tb_cadastro: TTabSheet
       Caption = 'Cadastro'
       Font.Charset = ANSI_CHARSET
@@ -33,13 +33,11 @@
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitWidth = 477
-      ExplicitHeight = 593
       object Image2: TImage
         Left = 0
         Top = 0
         Width = 476
-        Height = 740
+        Height = 721
         Align = alClient
         Picture.Data = {
           0954506E67496D61676589504E470D0A1A0A0000000D49484452000001F40000
@@ -2895,6 +2893,7 @@
         Top = 488
         Width = 74
         Height = 26
+        Style = csDropDownList
         Color = 14215158
         DataField = 'uf'
         DataSource = dm.DS_cliente
@@ -2906,32 +2905,35 @@
         Items.Strings = (
           'AC'
           'AL'
-          'AP'
           'AM'
+          'AP'
           'BA'
           'CE'
           'DF'
           'ES'
           'GO'
           'MA'
-          'MT'
-          'MS'
           'MG'
+          'MS'
+          'MT'
           'PA'
           'PB'
-          'PR'
           'PE'
           'PI'
+          'PR'
           'RJ'
           'RN'
-          'RS'
           'RO'
           'RR'
+          'RS'
           'SC'
-          'SP'
           'SE'
+          'SP'
           'TO')
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = False
+        Sorted = True
         TabOrder = 10
       end
       object txt_cep: TDBEdit
@@ -3019,7 +3021,9 @@
         Top = 488
         Width = 150
         Height = 26
+        Style = csDropDownList
         Color = 14215158
+        Ctl3D = True
         DataField = 'situacao'
         DataSource = dm.DS_cliente
         Font.Charset = ANSI_CHARSET
@@ -3030,7 +3034,9 @@
         Items.Strings = (
           'Ativo'
           'Inativo')
+        ParentCtl3D = False
         ParentFont = False
+        Sorted = True
         TabOrder = 4
       end
       object data_cad: TDBEdit
@@ -3054,8 +3060,6 @@
     object tb_consulta: TTabSheet
       Caption = 'Consulta'
       ImageIndex = 1
-      ExplicitWidth = 477
-      ExplicitHeight = 593
     end
   end
 end

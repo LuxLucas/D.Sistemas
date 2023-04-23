@@ -123,8 +123,7 @@ begin
  btn_editar.visible:= dm.tb_clientes.State in [dsbrowse];
  btn_salvar.visible:= dm.tb_clientes.State in [dsinsert, dsedit];
  btn_excluir.visible:= dm.tb_clientes.State in [dsbrowse];
- btn_cancelar.visible:= dm.tb_clientes.State in [dsbrowse];
- btn_excluir.visible:= dm.tb_clientes.State in [dsbrowse];
+ btn_cancelar.visible:= dm.tb_clientes.State in [dsbrowse, dsinsert, dsedit];
 
 
  // enabled no lugar de visible para botões
