@@ -1,0 +1,130 @@
+///////////////////////////////////////////////////////////////////////////
+
+function Tbiblio.Testenumber(x:string):boolean;
+var
+tam,c,v:integer;
+
+begin
+   v:=0;
+  tam:=length(x);
+
+    for c := 1 to tam do
+    begin
+
+     if ( (x[c]='0')or(x[c]='1')or(x[c]='2')or(x[c]='3')or(x[c]='4')or(x[c]='5')or(x[c]='6')or(x[c]='7')or(x[c]='8')or(x[c]='9') ) then
+     begin
+        result:=true;
+        v:=1;
+     end
+
+    end;
+
+    if(v>0)then
+    result:=true
+    else
+    result:=false;
+
+end;
+{function Tbiblio.cbxconf(cbx: string): Integer;
+var
+res,inv:integer;
+
+begin
+
+  if( testeletra(cbx)or(length(cbx)=0) ) then
+    begin
+
+       if(qtd_inv=0)then
+          begin
+            showmessage('[ERRO]'+#13+'Valor caractere indevido encontrado.'+#13+'Valores aceitos: 1, 2 e 3');
+            qtd_inv:=1;
+          end;
+
+          result:=0;
+        end
+
+        else
+        begin
+
+        res:=strtoint(cbx);
+
+        if(res>0)and(res<4) then
+        begin
+        result:=res;
+        end
+        else
+        begin
+         if valor_inv=0 then
+          begin
+           valor_inv:=1;
+           showmessage('[ERRO]'+#13+'Número não aceito encontrado.'+#13+'Valores aceitos: 1, 2 e 3');
+          end;
+         result:=0;
+        end;
+
+        end;
+
+  end;}
+///////////////////////////////////////////////////////////////////////////
+
+function Tbiblio.Testeletra(x:string):boolean;
+var
+tam,c,v:integer;
+
+begin
+   v:=0;
+  tam:=length(x);
+
+    for c := 1 to tam do
+    begin
+
+     if not( (x[c]='0')or(x[c]='1')or(x[c]='2')or(x[c]='3')or(x[c]='4')or(x[c]='5')or(x[c]='6')or(x[c]='7')or(x[c]='8')or(x[c]='9') ) then
+     begin
+        result:=true;
+        v:=1;
+     end
+
+    end;
+
+    if(v>0)then
+    result:=true
+    else
+    result:=false;
+
+end;
+
+///////////////////////////////////////////////////////////////////////////
+
+function Tbiblio.Testevazio(x: string): Boolean;
+begin
+
+  if(x='')then
+  begin
+    result:=true;
+  end
+  else
+  begin
+    result:=false;
+  end;
+
+end;
+
+///////////////////////////////////////////////////////////////////////////
+
+function Tbiblio.Tiraespaco(x:string):string;
+var
+c,tam:integer;
+y:string;
+
+begin
+   tam:=length(x);
+
+   for c:=1 to tam do
+   begin
+     if (x[c] <> ' ') then
+     y[c]:=x[c];
+   end;
+     result:=y;
+end;
+
+////////////////////////////////////////////////////////////////////////////

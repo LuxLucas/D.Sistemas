@@ -1,0 +1,14 @@
+program Burnout;
+
+uses
+  Vcl.Forms,
+  U.burnout in 'U.burnout.pas' {frm_princippal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_princippal, frm_princippal);
+  Application.Run;
+end.

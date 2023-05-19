@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/02/27 10:49:57.000.057,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/02 09:47:19.000.079,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/21 10:32:08.000.881,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/22 10:17:04.000.645,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/22 10:55:59.000.496,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\projeto_Burnout\U.burnout.dfm</Transaction>
+    <Transaction>2023/03/22 10:55:59.000.496,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\projeto_Burnout\U.burnout.pas</Transaction>
+    <Transaction>2023/03/22 10:56:04.000.674,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\projeto_Burnout\Burnout.dproj</Transaction>
+    <Transaction>2023/03/25 20:27:44.000.549,=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 20:29:53.000.142,C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.dfm=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\U_perg1.dfm</Transaction>
+    <Transaction>2023/03/25 20:29:53.000.142,C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.pas=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\U_perg1.pas</Transaction>
+    <Transaction>2023/03/29 08:29:40.000.077,=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.pas</Transaction>
+    <Transaction>2023/03/29 08:42:27.000.593,C:\Users\Terceiros Anos\Desktop\projeto_Burnout\U_perg2.pas=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.pas</Transaction>
+    <Transaction>2023/03/29 08:42:27.000.593,C:\Users\Terceiros Anos\Desktop\projeto_Burnout\U_perg2.dfm=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.dfm</Transaction>
+    <Transaction>2023/03/29 09:35:50.000.401,=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.pas</Transaction>
+    <Transaction>2023/03/29 09:44:33.000.953,C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.dfm=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\U_res.dfm</Transaction>
+    <Transaction>2023/03/29 09:44:33.000.953,C:\Users\Terceiros Anos\Desktop\projeto_Burnout\Unit1.pas=C:\Users\Terceiros Anos\Desktop\projeto_Burnout\U_res.pas</Transaction>
+    <Transaction>2023/03/30 22:13:04.000.367,=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.pas</Transaction>
+    <Transaction>2023/03/30 22:31:34.000.625,C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.pas=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\U_ajuda.pas</Transaction>
+    <Transaction>2023/03/30 22:31:34.000.625,C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\Unit1.dfm=C:\Users\papal\OneDrive\Documentos\Escola\D.Sistemas\aula04\projeto_Burnout\U_ajuda.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

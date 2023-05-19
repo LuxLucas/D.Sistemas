@@ -1,0 +1,53 @@
+unit U.Codigo_produto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    lb_codpro: TLabel;
+    txt_codpro: TEdit;
+    btn_verificar: TButton;
+    procedure btn_verificarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_principal.btn_verificarClick(Sender: TObject);
+var
+codpro:integer;
+begin
+  codpro:=strtoint(txt_codpro.text);
+
+  if(codpro=1)then
+  begin
+    showmessage('O produto é do tipo: Alimento não-perecível.');
+  end
+
+  else begin
+  if(codpro>=2)or(codpro<=4)then
+   begin
+    showmessage('O produto é do tipo: Alimento perecível.');
+   end
+
+     else begin
+       if(codpro=5)or(codpro=6)then
+       showmessage('O produto é do tipo: Vestuário.');
+     end;
+  end
+
+end;
+
+end.

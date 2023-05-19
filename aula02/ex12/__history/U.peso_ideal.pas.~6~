@@ -1,0 +1,86 @@
+unit U.peso_ideal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    lb_peso: TLabel;
+    txt_peso: TEdit;
+    lb_altura: TLabel;
+    txt_altura: TEdit;
+    btn_Processar: TButton;
+    lb_ideal: TLabel;
+    txt_peal: TEdit;
+    lb_gen: TLabel;
+    txt_gen: TEdit;
+    lb_aviso: TLabel;
+    lb_aviso2: TLabel;
+    lb_aviso3: TLabel;
+    lb_aviso4: TLabel;
+    lb_gener: TLabel;
+    lb_M: TLabel;
+    lb_kg: TLabel;
+    lb_kg2: TLabel;
+    procedure btn_ProcessarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_principal.btn_ProcessarClick(Sender: TObject);
+var
+peso,altura,pi:double;
+g:string;
+
+begin
+  peso:=strtofloat(txt_peso.text);
+  altura:=strtofloat(txt_altura.text);
+  g:=txt_gen.text;
+  pi:=0;
+
+  if(g<>'M')and(g<>'F')then
+  begin
+   showmessage('Gênero não listado');
+  end
+  else
+  begin
+    if (g='M')then
+    begin
+      pi:=(72.7*altura)-58;
+      txt_peal.text:=floattostr(pi);
+      if(pi=peso)then
+      showmessage('Você está em seu peso ideal.');
+      if(pi>peso)then
+       showmessage('Seu peso está '+floattostr(pi-peso)+' Kg abaixo do peso ideal.')
+      else
+       showmessage('Seu peso está '+floattostr(peso-pi)+' Kg acima do peso ideal.')
+    end;
+
+    if (g='F')then
+    begin
+      pi:=(62.1*altura)-44.7;
+      txt_peal.text:=floattostr(pi);
+      if(pi=peso)then
+      showmessage('Você está em seu peso ideal.');
+      if(pi>peso)then
+       showmessage('Seu peso está '+floattostr(pi-peso)+' Kg abaixo do peso ideal.')
+      else
+       showmessage('Seu peso está '+floattostr(peso-pi)+' Kg acima do peso ideal.')
+    end;
+  end;
+
+end;
+
+end.

@@ -1,0 +1,14 @@
+program Codigo_de_produto;
+
+uses
+  Vcl.Forms,
+  U.Codigo_produto in 'U.Codigo_produto.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

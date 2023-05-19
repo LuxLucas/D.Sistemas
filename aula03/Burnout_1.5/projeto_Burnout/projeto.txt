@@ -1,0 +1,23 @@
+ 
+Projeto total{
+  
+    *Impedir números repetidos;
+    *Não deixar perguntas sem respostas;
+    *No final, mostrar resultado?pontuação;   
+
+}
+
+
+ 1 - Tela de boas vindas:
+
+    *Nome
+    *Idade
+    -Texto explicativo do projeto;
+    *Botão de prosseguir;
+    *Ter imagem de fundo;
+    *Ter a logo das equipes que estão em cooperação;
+    *Tamanho da tela: height(700px) width(1100px);    
+
+ 2 - Telas de perguntas (3x):
+
+    *4 perguntas por tela;

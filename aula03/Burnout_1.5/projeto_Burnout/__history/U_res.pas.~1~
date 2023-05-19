@@ -1,0 +1,26 @@
+unit U_res;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tresultado = class(TForm)
+    btn_res: TButton;
+    lb_res: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  resultado: Tresultado;
+
+implementation
+
+{$R *.dfm}
+
+end.

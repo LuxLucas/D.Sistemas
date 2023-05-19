@@ -1,0 +1,48 @@
+unit U.estacionamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    lb_e: TLabel;
+    lb_he: TLabel;
+    txt_he: TEdit;
+    lb_me: TLabel;
+    txt_me: TEdit;
+    lb_s: TLabel;
+    lb_hs: TLabel;
+    txt_hs: TEdit;
+    lb_ms: TLabel;
+    txt_ms: TEdit;
+    lb_pagar: TLabel;
+    lb_p: TLabel;
+    txt_p: TEdit;
+    lb_cifra: TLabel;
+    btn_calcular: TButton;
+    procedure btn_calcularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_principal.btn_calcularClick(Sender: TObject);
+var
+me,he,ms,hs:double;
+
+begin
+
+end;
+
+end.

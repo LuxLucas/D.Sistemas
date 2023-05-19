@@ -1,0 +1,178 @@
+unit U_perg1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,U_perg2,U_ajuda;
+
+type
+  Tperg1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    cbx1: TComboBox;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Button1: TButton;
+    cbx2: TComboBox;
+    cbx3: TComboBox;
+    cbx4: TComboBox;
+    cbx5: TComboBox;
+    cbx6: TComboBox;
+    Button2: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function  Testevazio(x:string):boolean;
+  end;
+
+var
+  perg1: Tperg1;
+  resultado1:integer;
+
+implementation
+
+function Tperg1.Testevazio(x: string): Boolean;
+begin
+
+  if(x='')then
+  begin
+    result:=true;
+  end
+  else
+  begin
+    result:=false;
+  end;
+
+end;
+
+{$R *.dfm}
+
+procedure Tperg1.Button1Click(Sender: TObject);
+begin
+
+  application.CreateForm(Tajuda,ajuda);
+  ajuda.ShowModal;
+
+end;
+
+procedure Tperg1.Button2Click(Sender: TObject);
+var
+c,l:integer;
+
+begin
+c:=0;
+l:=0;
+
+    if(testevazio(cbx1.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx1.text);
+      l:=l+1;
+    end;
+
+    if(testevazio(cbx2.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx2.text);
+      l:=l+1;
+    end;
+
+    if(testevazio(cbx3.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx3.text);
+      l:=l+1;
+    end;
+
+    if(testevazio(cbx4.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx4.text);
+      l:=l+1;
+    end;
+
+    if(testevazio(cbx5.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx5.text);
+      l:=l+1;
+    end;
+
+    if(testevazio(cbx6.text)) then
+    begin
+     if(c=0)then
+     begin
+      showmessage('Campo vazio identificado.');
+      c:=1;
+     end;
+    end
+    else
+    begin
+      resultado1:=resultado1+strtoint(cbx6.text);
+      l:=l+1;
+    end;
+
+    if(l=6)then
+    begin
+      application.CreateForm(tperg2,perg2);
+      perg1.Close;
+      perg2.ShowModal;
+    end;
+
+end;
+
+procedure Tperg1.FormActivate(Sender: TObject);
+begin
+   application.CreateForm(Tajuda,ajuda);
+  ajuda.ShowModal;
+end;
+
+end.

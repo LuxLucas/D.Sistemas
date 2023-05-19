@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/02/27 10:49:57.000.057,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/02 09:47:19.000.079,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/21 10:32:08.000.881,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/22 08:59:31.000.384,=C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/22 09:01:01.000.652,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\U.tela_splax.dfm</Transaction>
+    <Transaction>2023/03/22 09:01:01.000.652,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\U.tela_splax.pas</Transaction>
+    <Transaction>2023/03/22 09:01:15.000.114,C:\Users\Terceiros Anos\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\telaSplash.dproj</Transaction>
+    <Transaction>2023/03/22 09:03:32.000.592,=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\Unit1.pas</Transaction>
+    <Transaction>2023/03/22 09:04:13.000.847,C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\Unit1.dfm=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\U_pg2.dfm</Transaction>
+    <Transaction>2023/03/22 09:04:13.000.847,C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\Unit1.pas=C:\Users\Terceiros Anos\Documents\System.lpf\lucas_pf\aula04\ex01\U_pg2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,40 @@
+unit U_res;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tresultado = class(TForm)
+    btn_res: TButton;
+    lb_res: TLabel;
+    lb_titulo: TLabel;
+    lb_tc: TLabel;
+    lb_cc: TLabel;
+    procedure btn_resClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  resultado: Tresultado;
+
+implementation
+
+{$R *.dfm}
+
+uses U_perg2,U_perg1;
+
+procedure Tresultado.btn_resClick(Sender: TObject);
+var
+result_fim:integer;
+begin
+  result_fim:=resultado1+resultado2;
+  lb_res.caption:=inttostr(result_fim);
+end;
+
+end.
