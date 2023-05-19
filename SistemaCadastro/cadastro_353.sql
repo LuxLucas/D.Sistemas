@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Abr-2023 às 12:58
+-- Tempo de geração: 10-Maio-2023 às 13:19
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.2.34
 
@@ -35,13 +35,22 @@ CREATE TABLE `cliente` (
   `cidade` varchar(50) NOT NULL,
   `uf` char(2) NOT NULL,
   `cep` varchar(12) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
+  `cpf` varchar(15) NOT NULL,
   `celular` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `data_nasc` date NOT NULL,
   `data_cad` date NOT NULL,
   `situacao` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `endereco`, `bairro`, `cidade`, `uf`, `cep`, `cpf`, `celular`, `email`, `data_nasc`, `data_cad`, `situacao`) VALUES
+(6, 'lucas', 'ererre', 'Wereer', 'AsAdOhoiH', 'SC', '12121-21', '121.212.121-56', '(12)12121-2121', 'grsger@gmail.com', '2012-12-12', '2023-04-26', 'Ativo'),
+(7, 'Davi', 'iubiusb', 'bibsib', 'shrhrth', 'sC', '54545-45', '545.454.545', '(45)45454-5445', 'hohoashoi@gmail.com', '2012-12-12', '2023-04-26', 'ativo'),
+(8, 'lucio', 'fuyfufkf', 'dydtydyd', 'fkuyfuyfuyfu', 'AC', '98998-80', '123456789123456', '(45)45543-5435', 'ukk@gmail.com', '2006-04-03', '2023-04-26', 'inativo');
 
 --
 -- Índices para tabelas despejadas
@@ -61,7 +70,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

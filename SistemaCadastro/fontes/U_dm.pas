@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQLDef,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.MySQL, Data.DB,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DApt, FireDAC.Comp.DataSet, frxClass, frxDBSet;
 
 type
   Tdm = class(TDataModule)
@@ -24,12 +24,30 @@ type
     tb_clientescidade: TStringField;
     tb_clientesuf: TStringField;
     tb_clientescep: TStringField;
-    tb_clientescpf: TStringField;
     tb_clientescelular: TStringField;
     tb_clientesemail: TStringField;
     tb_clientesdata_nasc: TDateField;
     tb_clientesdata_cad: TDateField;
     tb_clientessituacao: TStringField;
+    ds_con_cliente: TDataSource;
+    sql_con_cliente: TFDQuery;
+    tb_clientescpf: TStringField;
+    report: TfrxReport;
+    ds_rel_cliente: TfrxDBDataset;
+    sql_imprimir: TFDQuery;
+    sql_imprimirid: TFDAutoIncField;
+    sql_imprimirnome: TStringField;
+    sql_imprimirendereco: TStringField;
+    sql_imprimirbairro: TStringField;
+    sql_imprimircidade: TStringField;
+    sql_imprimiruf: TStringField;
+    sql_imprimircep: TStringField;
+    sql_imprimircpf: TStringField;
+    sql_imprimircelular: TStringField;
+    sql_imprimiremail: TStringField;
+    sql_imprimirdata_nasc: TDateField;
+    sql_imprimirdata_cad: TDateField;
+    sql_imprimirsituacao: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

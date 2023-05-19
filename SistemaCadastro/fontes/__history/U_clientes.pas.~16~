@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
-  Vcl.ComCtrls, Vcl.Imaging.GIFImg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Data.DB;
+  Vcl.ComCtrls, Vcl.Imaging.GIFImg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Data.DB,
+  Vcl.Grids, Vcl.DBGrids;
 
 type
   TClientes = class(TForm)
@@ -47,6 +48,16 @@ type
     btn_cancelar: TImage;
     btn_fechar: TImage;
     btn_localizar: TImage;
+    btn_voltar: TButton;
+    DBGrid1: TDBGrid;
+    btn_pesquisar: TButton;
+    btn_imprimir: TButton;
+    btn_buscartudo: TButton;
+    lb_buscar: TLabel;
+    rg_opcoes: TRadioGroup;
+    txt_buscar: TEdit;
+    data1: TDateTimePicker;
+    lb_msg: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure btn_inserirClick(Sender: TObject);
     procedure btn_editarClick(Sender: TObject);
@@ -54,9 +65,16 @@ type
     procedure btn_excluirClick(Sender: TObject);
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_fecharClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btn_localizarClick(Sender: TObject);
+    procedure btn_voltarClick(Sender: TObject);
+    procedure rg_opcoesClick(Sender: TObject);
+    procedure btn_pesquisarClick(Sender: TObject);
+    procedure txt_buscarKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
     PROCEDURE configBotoes;
+    procedure QuantidadeDeRegistros;
 
   public
     { Public declarations }
@@ -99,6 +117,7 @@ begin
  end else
 
   dm.tb_clientes.Close;
+  clientes.Close;
 
 end;
 
@@ -116,6 +135,78 @@ begin
 
 end;
 
+procedure TClientes.btn_localizarClick(Sender: TObject);
+begin
+// Aqui muda a posição do PagControl 1 para a tela de consulta
+  PageControl1.TabIndex:=1;
+  tb_consulta.TabVisible:=true;
+  tb_cadastro.TabVisible:=false;
+  dm.sql_con_cliente.Refresh;
+
+end;
+
+procedure TClientes.btn_pesquisarClick(Sender: TObject);
+begin
+  if txt_buscar.Text = '' then
+  begin
+    Showmessage('Meu consagrado(a), digite algo para pesquisar.');
+    txt_buscar.SetFocus;
+    exit;
+  end
+ {///} else begin
+       with dm.sql_con_cliente do
+       begin
+       //MEXENDO COM BD
+         close;
+         sql.Clear;
+         sql.Add('Select * from cliente');
+
+         case rg_opcoes.ItemIndex of
+
+          0:
+          begin
+            sql.Add('where id = :codigo');
+            ParamByName('codigo').Value:= txt_buscar.Text;
+
+          end;
+
+          1:
+          begin
+            sql.Add('where nome like :nome');
+            ParamByName('nome').Value:= '%'+txt_buscar.Text+'%';
+
+          end;
+
+          2:
+          begin
+            sql.Add('where cpf = :cpf');
+            ParamByName('cpf').Value:= txt_buscar.Text;
+
+          end;
+
+          3:
+          begin
+            sql.Add('where celular = :celular');
+            ParamByName('celular').Value:= txt_buscar.Text;
+
+          end;
+
+          4:
+          begin
+            sql.Add('where data_nasc = :data');
+            ParamByName('data').AsDate:= StrToDate(FormatDateTime('dd/mm/yyyy',data1.Date));
+
+          end;
+
+         end;
+         //ExecSQL;
+         open;
+       end;
+         QuantidadeDeRegistros;
+  {//}end;
+
+end;
+
 procedure TClientes.configBotoes;
 begin
 
@@ -123,7 +214,8 @@ begin
  btn_editar.visible:= dm.tb_clientes.State in [dsbrowse];
  btn_salvar.visible:= dm.tb_clientes.State in [dsinsert, dsedit];
  btn_excluir.visible:= dm.tb_clientes.State in [dsbrowse];
- btn_cancelar.visible:= dm.tb_clientes.State in [dsbrowse, dsinsert, dsedit];
+ btn_cancelar.visible:= dm.tb_clientes.State in [{dsbrowse,} DSINSERT, DsEDIT];
+
 
 
  // enabled no lugar de visible para botões
@@ -135,12 +227,159 @@ begin
   (image1.Picture.Graphic as TGIFImage).Animate:=true;
 end;
 
+procedure TClientes.FormCreate(Sender: TObject);
+begin
+// Aqui mostra como mudar a posição do PagControl 1
+
+  Pagecontrol1.TabIndex:=0;
+  tb_consulta.TabVisible:=false;
+
+// Pra quem tá usando botão é enabled
+  btn_salvar.visible:=false;
+  btn_cancelar.visible:=false;
+
+// Desativando botões e componentes
+  txt_buscar.Visible:=false;
+  lb_buscar.Visible:=false;
+  data1.Visible:=false;
+
+  btn_imprimir.Enabled:=false;
+  btn_pesquisar.Enabled:=false;
+
+end;
+
+procedure TClientes.QuantidadeDeRegistros;
+begin
+  if dm.sql_con_cliente.RecordCount = 0 then
+  begin
+    lb_msg.Visible:=true;
+    lb_msg.Caption:='';
+    lb_msg.Caption:='Nenhum registro encontrado';
+    btn_imprimir.Enabled:=false;
+  end;
+
+  if dm.sql_con_cliente.RecordCount = 1 then
+  begin
+    lb_msg.Visible:=true;
+    lb_msg.Caption:='';
+    lb_msg.Caption:='Apenas 1 registro encontrado';
+    btn_imprimir.Enabled:=true;
+  end;
+
+  if dm.sql_con_cliente.RecordCount > 1 then
+  begin
+    lb_msg.Visible:=true;
+    lb_msg.Caption:='';
+    lb_msg.Caption:='Foi encontrado '+INTtOsTR(Dm.sql_con_cliente.recordcount)+' cadastros';
+    btn_imprimir.Enabled:=true;
+  end;
+
+end;
+
+procedure TClientes.rg_opcoesClick(Sender: TObject);
+begin
+  case rg_opcoes.itemindex of
+
+     0:
+     begin
+      txt_buscar.Visible:=true;
+      lb_buscar.caption:='Digite o código do cadastro';
+      lb_buscar.Visible:=true;
+      data1.visible:=false;
+      txt_buscar.Clear;
+      btn_pesquisar.Enabled:=true;
+      txt_buscar.SetFocus;
+
+     end;
+
+     1:
+     begin
+     txt_buscar.Visible:=true;
+      lb_buscar.caption:='Digite o nome do cadastro';
+      lb_buscar.Visible:=true;
+      data1.visible:=false;
+      txt_buscar.Clear;
+      btn_pesquisar.Enabled:=true;
+      txt_buscar.SetFocus;
+
+     end;
+
+     2:
+     begin
+     txt_buscar.Visible:=true;
+      lb_buscar.caption:='Digite o CPF do cadastro';
+      lb_buscar.Visible:=true;
+      data1.visible:=false;
+      txt_buscar.Clear;
+      btn_pesquisar.Enabled:=true;
+      txt_buscar.SetFocus;
+
+     end;
+
+     3:
+     begin
+     txt_buscar.Visible:=true;
+      lb_buscar.caption:='Digite o telefone de cadastro';
+      lb_buscar.Visible:=true;
+      data1.visible:=false;
+      txt_buscar.Clear;
+      btn_pesquisar.Enabled:=true;
+      txt_buscar.SetFocus;
+
+     end;
+
+     4:
+     begin
+     txt_buscar.Visible:=false;
+      lb_buscar.caption:='Digite a data de nascimento de cadastro';
+      lb_buscar.Visible:=true;
+      data1.visible:=true;
+      txt_buscar.text:='L';
+      btn_pesquisar.Enabled:=true;
+
+     end;
+
+  end;
+end;
+
+procedure TClientes.txt_buscarKeyPress(Sender: TObject; var Key: Char);
+begin
+  case rg_opcoes.itemIndex of
+    0:
+      Begin
+       if ( (key in ['0'..'9']=false) and (word(key)<>VK_BACK)) then
+       begin
+         showmessage('Digite apenas números');
+         key:=#0;
+       end;
+      End;
+
+    2:
+      Begin
+       if ( (key in ['0'..'9']=false) and (word(key)<>VK_BACK)) then
+       begin
+         showmessage('Digite apenas números');
+         key:=#0;
+       end;
+      End;
+  end;
+end;
+
 procedure TClientes.btn_salvarClick(Sender: TObject);
 begin
  dm.tb_clientes.Post;
  showmessage('Cliente alvo com sucesso ');
+
  //habilitando e desabilitando botões
  configBotoes;
+
+end;
+
+procedure TClientes.btn_voltarClick(Sender: TObject);
+begin
+  PageControl1.TabIndex:=0;
+  tb_consulta.TabVisible:=false;
+  tb_cadastro.TabVisible:=true;
 
 end;
 

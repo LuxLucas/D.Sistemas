@@ -1,10 +1,9 @@
 ﻿object Clientes: TClientes
   Left = 0
   Top = 0
-  Width = 500
-  Height = 788
-  AutoScroll = True
   Caption = 'Cadastro de Clientes'
+  ClientHeight = 749
+  ClientWidth = 484
   Color = clWhite
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -13,8 +12,8 @@
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
-  ScreenSnap = True
   OnActivate = FormActivate
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TPageControl
@@ -2531,7 +2530,7 @@
         ParentFont = False
       end
       object btn_inserir: TImage
-        Left = 63
+        Left = 19
         Top = 557
         Width = 100
         Height = 35
@@ -2570,7 +2569,7 @@
         OnClick = btn_inserirClick
       end
       object btn_editar: TImage
-        Left = 189
+        Left = 133
         Top = 557
         Width = 100
         Height = 35
@@ -2605,7 +2604,7 @@
         OnClick = btn_editarClick
       end
       object btn_salvar: TImage
-        Left = 319
+        Left = 357
         Top = 557
         Width = 100
         Height = 35
@@ -2645,7 +2644,7 @@
         OnClick = btn_salvarClick
       end
       object btn_excluir: TImage
-        Left = 248
+        Left = 189
         Top = 616
         Width = 100
         Height = 35
@@ -2684,8 +2683,8 @@
         OnClick = btn_excluirClick
       end
       object btn_cancelar: TImage
-        Left = 117
-        Top = 616
+        Left = 239
+        Top = 557
         Width = 100
         Height = 35
         Picture.Data = {
@@ -2728,8 +2727,8 @@
         OnClick = btn_cancelarClick
       end
       object btn_fechar: TImage
-        Left = 248
-        Top = 672
+        Left = 309
+        Top = 616
         Width = 100
         Height = 35
         Picture.Data = {
@@ -2766,8 +2765,8 @@
         OnClick = btn_fecharClick
       end
       object btn_localizar: TImage
-        Left = 117
-        Top = 672
+        Left = 69
+        Top = 616
         Width = 100
         Height = 35
         Picture.Data = {
@@ -2806,6 +2805,7 @@
           1A8862D240149306A29800E43BE95FBB2B23FDDB5EB5247EDB1BE59D84DF9E68
           09DD2EFC3F2426FE1B32E0B737875C83067330E451F17F2237494F5F07297CB9
           F3910A309238F11B8A4C81960C11A5260000000049454E44AE426082}
+        OnClick = btn_localizarClick
       end
       object txt_id: TDBEdit
         Left = 51
@@ -2829,6 +2829,7 @@
         Top = 320
         Width = 270
         Height = 26
+        CharCase = ecUpperCase
         Color = 14215414
         DataField = 'endereco'
         DataSource = dm.DS_cliente
@@ -2845,6 +2846,7 @@
         Top = 264
         Width = 270
         Height = 26
+        CharCase = ecUpperCase
         Color = 14215414
         DataField = 'nome'
         DataSource = dm.DS_cliente
@@ -2861,6 +2863,7 @@
         Top = 376
         Width = 270
         Height = 26
+        CharCase = ecUpperCase
         Color = 14215414
         DataField = 'bairro'
         DataSource = dm.DS_cliente
@@ -2877,6 +2880,7 @@
         Top = 264
         Width = 138
         Height = 26
+        CharCase = ecUpperCase
         Color = 14215414
         DataField = 'cidade'
         DataSource = dm.DS_cliente
@@ -2905,35 +2909,32 @@
         Items.Strings = (
           'AC'
           'AL'
-          'AM'
           'AP'
+          'AM'
           'BA'
           'CE'
           'DF'
           'ES'
           'GO'
           'MA'
-          'MG'
-          'MS'
           'MT'
+          'MS'
+          'MG'
           'PA'
           'PB'
+          'PR'
           'PE'
           'PI'
-          'PR'
           'RJ'
           'RN'
+          'RS'
           'RO'
           'RR'
-          'RS'
           'SC'
-          'SE'
           'SP'
+          'SE'
           'TO')
         ParentFont = False
-        ParentShowHint = False
-        ShowHint = False
-        Sorted = True
         TabOrder = 10
       end
       object txt_cep: TDBEdit
@@ -2949,6 +2950,7 @@
         Font.Height = -15
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
+        MaxLength = 9
         ParentFont = False
         TabOrder = 8
       end
@@ -2971,7 +2973,7 @@
       object txt_cpf: TDBEdit
         Left = 319
         Top = 323
-        Width = 138
+        Width = 127
         Height = 26
         Color = 14215414
         DataField = 'cpf'
@@ -2981,6 +2983,7 @@
         Font.Height = -15
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
+        MaxLength = 14
         ParentFont = False
         TabOrder = 7
       end
@@ -2997,6 +3000,7 @@
         Font.Height = -15
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
+        MaxLength = 14
         ParentFont = False
         TabOrder = 9
       end
@@ -3013,6 +3017,7 @@
         Font.Height = -15
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
+        MaxLength = 10
         ParentFont = False
         TabOrder = 5
       end
@@ -3023,7 +3028,6 @@
         Height = 26
         Style = csDropDownList
         Color = 14215158
-        Ctl3D = True
         DataField = 'situacao'
         DataSource = dm.DS_cliente
         Font.Charset = ANSI_CHARSET
@@ -3034,9 +3038,7 @@
         Items.Strings = (
           'Ativo'
           'Inativo')
-        ParentCtl3D = False
         ParentFont = False
-        Sorted = True
         TabOrder = 4
       end
       object data_cad: TDBEdit
@@ -3053,13 +3055,158 @@
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
+        MaxLength = 10
         ParentFont = False
         TabOrder = 12
       end
     end
     object tb_consulta: TTabSheet
       Caption = 'Consulta'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
       ImageIndex = 1
+      ParentFont = False
+      object lb_buscar: TLabel
+        Left = 128
+        Top = 112
+        Width = 51
+        Height = 18
+        Caption = 'Buscar'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_msg: TLabel
+        Left = 16
+        Top = 544
+        Width = 160
+        Height = 16
+        Caption = 'Quantidade de Registros'
+        Visible = False
+      end
+      object btn_voltar: TButton
+        Left = 392
+        Top = 3
+        Width = 75
+        Height = 25
+        Caption = 'Voltar'
+        TabOrder = 0
+        OnClick = btn_voltarClick
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 553
+        Width = 476
+        Height = 168
+        Align = alBottom
+        DataSource = dm.ds_con_cliente
+        TabOrder = 1
+        TitleFont.Charset = ANSI_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = [fsBold]
+        OnCellClick = DBGrid1CellClick
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'nome'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cidade'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'celular'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'data_nasc'
+            Visible = True
+          end>
+      end
+      object btn_pesquisar: TButton
+        Left = 89
+        Top = 240
+        Width = 91
+        Height = 25
+        Caption = 'Pesquisar'
+        TabOrder = 2
+        OnClick = btn_pesquisarClick
+      end
+      object btn_imprimir: TButton
+        Left = 288
+        Top = 240
+        Width = 95
+        Height = 25
+        Caption = 'Imprimir'
+        TabOrder = 3
+        OnClick = btn_imprimirClick
+      end
+      object btn_buscartudo: TButton
+        Left = 186
+        Top = 240
+        Width = 96
+        Height = 25
+        Caption = 'Buscar Tudo'
+        TabOrder = 4
+        OnClick = btn_buscartudoClick
+      end
+      object rg_opcoes: TRadioGroup
+        Left = 128
+        Top = 344
+        Width = 209
+        Height = 137
+        Caption = 'Pesquisar por:'
+        Items.Strings = (
+          'Por C'#211'DIGO'
+          'Por NOME'
+          'Por CPF'
+          'Por CELULAR'
+          'Por DATA DE NASCIMENTO')
+        TabOrder = 5
+        OnClick = rg_opcoesClick
+      end
+      object txt_buscar: TEdit
+        Left = 141
+        Top = 181
+        Width = 196
+        Height = 24
+        TabOrder = 6
+        OnKeyPress = txt_buscarKeyPress
+      end
+      object data1: TDateTimePicker
+        Left = 154
+        Top = 151
+        Width = 170
+        Height = 24
+        Date = 45042.000000000000000000
+        Time = 0.345959432866948200
+        TabOrder = 7
+      end
+      object txt_impressao: TEdit
+        Left = 205
+        Top = 297
+        Width = 68
+        Height = 24
+        Enabled = False
+        TabOrder = 8
+      end
     end
   end
 end
