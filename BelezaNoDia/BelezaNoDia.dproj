@@ -103,8 +103,13 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="Units\U_Login.pas">
-            <Form>Form1</Form>
+            <Form>frm_login</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit\U_DM.pas">
+            <Form>DM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -134,7 +139,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\BelezaNoDia.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="BelezaNoDia.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>BelezaNoDia.exe</RemoteName>
                         <Overwrite>true</Overwrite>

@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frm_login: Tfrm_login
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Tela de Login'
   ClientHeight = 449
   ClientWidth = 594
   Color = clBtnFace

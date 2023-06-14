@@ -8,7 +8,7 @@ uses
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.ColorGrd;
 
 type
-  TForm1 = class(TForm)
+  Tfrm_login = class(TForm)
     Edit2: TEdit;
     Edit1: TEdit;
     Image1: TImage;
@@ -24,18 +24,18 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frm_login: Tfrm_login;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.panelTrocaCor(VPanel: TPanel; VCorPanel: TColor);
+procedure Tfrm_login.panelTrocaCor(VPanel: TPanel; VCorPanel: TColor);
 begin
   VPanel.color := VCorPanel;
 end;
 
-procedure TForm1.moMouseEnter(Sender: TObject);
+procedure Tfrm_login.moMouseEnter(Sender: TObject);
 begin
   panelTrocaCor(panel1, $0000C9FF);
 end;

@@ -2,13 +2,15 @@ program BelezaNoDia;
 
 uses
   Vcl.Forms,
-  U_Login in 'Units\U_Login.pas' {Form1};
+  U_Login in 'Units\U_Login.pas' {frm_login},
+  U_DM in 'unit\U_DM.pas' {DM: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tfrm_login, frm_login);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.

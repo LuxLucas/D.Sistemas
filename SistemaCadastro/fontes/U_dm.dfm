@@ -8,14 +8,13 @@ object dm: Tdm
       'Database=cadastro_353'
       'User_Name=root'
       'DriverID=MySQL')
-    Connected = True
     Left = 56
     Top = 40
   end
   object driver: TFDPhysMySQLDriverLink
     VendorLib = 
-      'C:\Users\papal\OneDrive\Documentos\trabalhos\SistemaCadastro\lib' +
-      '\libmySQL.dll'
+      'C:\Users\papal\OneDrive\Documentos\MeusProjetos\D.Sistemas\Siste' +
+      'maCadastro\lib\libmySQL.dll'
     Left = 168
     Top = 40
   end
@@ -125,7 +124,6 @@ object dm: Tdm
     Top = 256
   end
   object sql_con_cliente: TFDQuery
-    Active = True
     Connection = conexao
     SQL.Strings = (
       'select * from cliente')

@@ -1111,9 +1111,8 @@ object Form1: TForm1
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
-    Font.Name = 'Arial Rounded MT Bold'
-    Font.Orientation = 12
-    Font.Style = []
+    Font.Name = 'Sylfaen'
+    Font.Style = [fsBold]
     ParentCtl3D = False
     ParentFont = False
     TabOrder = 0
@@ -1131,7 +1130,7 @@ object Form1: TForm1
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
-    Font.Name = 'Arial'
+    Font.Name = 'Sylfaen'
     Font.Style = [fsBold]
     ParentCtl3D = False
     ParentDoubleBuffered = False
@@ -1143,8 +1142,11 @@ object Form1: TForm1
     Top = 288
     Width = 210
     Height = 38
+    AutoSize = True
     Color = 51711
     ParentBackground = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 2
     object mo: TSpeedButton
       Left = 1
@@ -1158,16 +1160,15 @@ object Form1: TForm1
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -16
-      Font.Name = 'Arial Rounded MT Bold'
-      Font.Style = []
+      Font.Name = 'Sylfaen'
+      Font.Style = [fsBold]
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      Spacing = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 209
-      ExplicitHeight = 38
+      Spacing = -1
+      Transparent = False
+      OnMouseEnter = moMouseEnter
+      ExplicitTop = -1
     end
   end
 end
