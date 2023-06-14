@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/02 15:04:19.000.518,=C:\Users\papal\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/08 23:55:27.000.291,=C:\Users\papal\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/09 00:01:11.000.279,C:\Users\papal\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\papal\OneDrive\Documentos\MeusProjetos\D.Sistemas\BelezaNoDia\Units\U_Login.dfm</Transaction>
+    <Transaction>2023/06/09 00:01:11.000.279,C:\Users\papal\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\papal\OneDrive\Documentos\MeusProjetos\D.Sistemas\BelezaNoDia\Units\U_Login.pas</Transaction>
+    <Transaction>2023/06/09 00:01:34.000.375,C:\Users\papal\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\papal\OneDrive\Documentos\MeusProjetos\D.Sistemas\BelezaNoDia\BelezaNoDia.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
